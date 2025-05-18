@@ -1,0 +1,15 @@
+alias: Moisture poll
+description: ""
+triggers:
+  - minutes: /1
+    trigger: time_pattern
+conditions: []
+actions:
+  - data:
+      ieee: 00:0d:6f:00:12:34:56:78
+      endpoint: 3
+      cluster: 12
+      attribute: present_value
+      force_update: true
+    action: zha_toolkit.attr_read
+mode: single
